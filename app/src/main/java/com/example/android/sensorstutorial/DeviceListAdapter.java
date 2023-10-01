@@ -11,6 +11,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class DeviceListAdapter extends ArrayAdapter<BluetoothDevice> {
+
     private LayoutInflater mLayoutInflater;
     private ArrayList<BluetoothDevice> mDevices;
     private int  mViewResourceId;
@@ -28,8 +29,8 @@ public class DeviceListAdapter extends ArrayAdapter<BluetoothDevice> {
         BluetoothDevice device = mDevices.get(position);
 
         if (device != null) {
-            TextView deviceName = (TextView) convertView.findViewById(R.id.deviceName);
-            TextView deviceAdress = (TextView) convertView.findViewById(R.id.deviceAddress);
+            TextView deviceName = (TextView) convertView.findViewById(R.id.tvDeviceName);
+            TextView deviceAdress = (TextView) convertView.findViewById(R.id.tvDeviceAddress);
 
             if (deviceName != null) {
                 deviceName.setText(device.getName());
@@ -41,4 +42,5 @@ public class DeviceListAdapter extends ArrayAdapter<BluetoothDevice> {
 
         return convertView;
     }
+
 }

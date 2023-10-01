@@ -1,54 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:padding="16dp"
+    tools:context="com.example.android.sensorstutorial.MainActivity">
 
     <Button
-        android:id="@+id/btnOnOff"
+        android:id="@+id/btnONOFF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="On/Off"
-        app:layout_constraintEnd_toStartOf="@+id/btnDiscoverable"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:padding="8dp"
+        android:text="ON/OFF" />
 
     <Button
-        android:id="@+id/btnDiscoverable"
+        android:id="@+id/btnDiscoverable_on_off"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/btnONOFF"
+        android:layout_marginTop="16dp"
         android:onClick="btnEnableDisable_Discoverable"
-        android:text="Enable Discover"
-        app:layout_constraintEnd_toStartOf="@+id/btnDiscover"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnOnOff"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:padding="8dp"
+        android:text="Enable Discoverable" />
 
     <Button
-        android:id="@+id/btnDiscover"
+        android:id="@+id/btnFindUnpairedDevices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_below="@+id/btnDiscoverable_on_off"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
         android:onClick="btnDiscover"
-        android:text="Discover"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnDiscoverable"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:padding="8dp"
+        android:text="Discover" />
 
     <ListView
         android:id="@+id/lvNewDevices"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnOnOff" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_below="@+id/btnFindUnpairedDevices"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/btnStartConnection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lvNewDevices"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Start Connection" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnStartConnection"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:hint="Enter Text Here"
+        android:minHeight="48dp" />
+
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:text="SEND" />
+</RelativeLayout>
